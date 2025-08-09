@@ -1,0 +1,7 @@
+crispy-bootstrap5==2025.6
+django==5.2.2
+django-admin-interface==0.30.1
+django-ckeditor==6.7.3
+django-colorfield==0.14.0
+pillow==.2.1
+PyMySQL==1.1.1
