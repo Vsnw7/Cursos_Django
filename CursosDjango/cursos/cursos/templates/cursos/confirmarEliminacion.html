@@ -1,0 +1,21 @@
+{% extends 'inicio/encabezado.html' %}
+{% load static %}
+
+{% block titulo %}Cursos{% endblock %}
+{% block texto %}Cursos{% endblock %}
+
+{% block contenido %}
+<form method="POST">
+{% csrf_token %}
+
+<!-- ALERTA -->
+<div class="alert alert-danger">
+    <h5>Eliminando Curso</h5>
+    <p>¿Estás seguro que deseas <strong>Eliminar</strong> el curso seleccionado?</p>
+</div>
+<!-- /ALERTA -->
+
+<button type="submit" class="btn btn-danger">Si</button>
+    <a href="{% url 'Cursos' %}" class="btn btn-primary">Cancelar</a>
+</form>
+{% endblock %}
