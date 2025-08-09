@@ -1,0 +1,59 @@
+/* Fondo general */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Encabezado del panel */
+#header {
+    background-color: #1e1e2f;
+    color: white;
+    border-bottom: 3px solid #4e4e60;
+}
+
+/* Texto del encabezado */
+#header h1, #header h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* Botones */
+.button, .submit-row input {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.button:hover, .submit-row input:hover {
+    background-color: #16a085;
+}
+
+/* Títulos de módulos */
+.module h2 {
+    color: #1e1e2f;
+}
+
+/* Filtros laterales */
+#changelist-filter h2 {
+    color: #333;
+}
+
+/* Título principal */
+#site-name {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 26px;
+}
+
+/* Color de los enlaces */
+#user-tools a, .module h2 {
+    color: #2a9d8f !important;
+}
+
+/* Ajustes para que se vea más moderno */
+.dashboard-module {
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

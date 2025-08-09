@@ -1,22 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse 
+from .models import Cursos
+ 
+# Create your views here.
 
-def principal(request):
-    return render(request, "inicio/principal.html") 
-
-def cursos(request):
-    cursos_lista = [
-        { 'titulo': 'Programación',                'imagen': 'inicio/images/image.png' },
-        { 'titulo': 'Base de datos',               'imagen': 'inicio/images/base de datos.webp' },
-        { 'titulo': 'Inglés',                      'imagen': 'inicio/images/ingles.webp' },
-        { 'titulo': 'Desarrollo Web',              'imagen': 'inicio/images/desarrollo-web.png' },
-        { 'titulo': 'Administración de Proyectos', 'imagen': 'inicio/images/adp.jpg' },
-    ]
-    contexto = {
-        'cursos': cursos_lista
-    }
-    return render(request, "inicio/cursos.html", contexto)
-
-def contacto(request):
-    return render(request, "inicio/contacto.html") 
+def cursos (request):
+    cursos=Cursos.objects.all()
+    return render(request, "cursos/cursos.html", {'cursos':cursos})
 
