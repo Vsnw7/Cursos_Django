@@ -87,5 +87,42 @@
   <script src="{% static 'contenido/vendors/justgage/justgage.js' %}"></script>
   <script src="{% static 'contenido/js/jquery.cookie.js' %}" type="text/javascript"></script>
   <script src="{% static 'contenido/js/dashboard.js' %}"></script>
+
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecciona los elementos del menú
+        const navbarToggler = document.querySelector('[data-toggle="horizontal-menu-toggle"]');
+        const menu = document.querySelector('.bottom-navbar');
+
+        // Función para cerrar el menú y guardar el estado en localStorage
+        function closeMenu() {
+            if (menu.classList.contains('header-toggled')) {
+                navbarToggler.click();
+                localStorage.setItem('menuState', 'closed');
+            }
+        }
+
+        // Agrega un evento 'click' a cada enlace
+        const navLinks = menu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Agrega un evento 'click' al botón de toggle para guardar el estado
+        navbarToggler.addEventListener('click', () => {
+            if (menu.classList.contains('header-toggled')) {
+                localStorage.setItem('menuState', 'open');
+            } else {
+                localStorage.setItem('menuState', 'closed');
+            }
+        });
+
+        // Al cargar la página, revisa si el menú debe estar cerrado
+        if (localStorage.getItem('menuState') === 'closed') {
+            menu.classList.remove('header-toggled');
+        }
+    });
+</script>
   </body>
 </html>

@@ -10,12 +10,14 @@
 
 <!-- ALERTA -->
 <div class="alert alert-danger">
+    <hr style="border-top: 1px dotted rgba(255,255,255,0.3); width: 60%; margin: 0 auto 30px auto;">
+
     <h5>Eliminando Curso</h5>
     <p>¿Estás seguro que deseas <strong>Eliminar</strong> el curso seleccionado?</p>
 </div>
 <!-- /ALERTA -->
 
 <button type="submit" class="btn btn-danger">Si</button>
-    <a href="{% url 'Cursos' %}" class="btn btn-primary">Cancelar</a>
+    <a href="{% url 'Cursos' %}" class="btn btn-success">Cancelar</a>
 </form>
 {% endblock %}

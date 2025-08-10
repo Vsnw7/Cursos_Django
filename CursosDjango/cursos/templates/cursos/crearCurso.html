@@ -5,9 +5,12 @@
 {% block texto %}Crear Curso{% endblock %}
 
 {% block contenido %}
+    <hr style="border-top: 1px dotted rgba(255,255,255,0.3); width: 60%; margin: 0 auto 30px auto;">
+
 <form class="form-horizontal" action="{% url 'crear_curso' %}" method="POST" enctype="multipart/form-data" role="form">
     {% csrf_token %}
     <div class="panel panel-default">
+
         <div class="panel-body">
 
             <div class="form-group">
