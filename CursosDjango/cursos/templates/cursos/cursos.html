@@ -6,6 +6,7 @@
 
 {% block contenido %}
 <div class="row">
+    <hr style="border-top: 1px dotted rgba(255,255,255,0.3); width: 60%; margin: 0 auto 30px auto;">
     <div class="col-lg-12">
         <div class="text-center" style="padding: 20px 0;">
             <h2 style=" text-transform: uppercase; display: block; ">Cursos disponibles</h2>
@@ -16,35 +17,36 @@
 
 <a href="{% url 'crear_curso' %}" class="btn btn-success mb-3">Crear nuevo curso</a>
 
-<table class="table table-bordered">
-    <thead>
-		<tr class="table bg-white text-white">
-			<th>Imagen</th>
-			<th>Titulo</th>
-			<th>Categoría</th>
-			<th>Descripción</th>
-			<th>Profesor</th>
-			<th></th>
-		</tr>
-	</thead>
-
-    <tbody>
-		{% for curso in cursos %}
-		<tr>
-			<td class="text-center">
-				<img src="{{ curso.imagen.url }}" alt="" class="img-media" height="60%" width="30%">
-			</td>
-			<td class="text-semibold">{{ curso.titulo }}</td>
-			<td class="muted">{{ curso.categoria }}</td>
-			<td class="muted">{{ curso.descripcion }}</td>
-			<td class="muted">{{ curso.profesor }}</td>
-			<td>
-				<a href="{% url 'editar_curso' curso.id %}" class="btn btn-sm btn-success">Editar</a>
-				<a href="{% url 'eliminar_curso' curso.id %}" class="btn btn-sm btn-danger">Eliminar</a>
-			</td>
-		</tr>
-		{% endfor %}
-	</tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table bg-white text-white">
+                <th>Imagen</th>
+                <th>Titulo</th>
+                <th>Categoría</th>
+                <th><th>Descripción</th>
+                <th>Profesor</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+            <tr>
+                <td class="text-center">
+                    <img src="{{ curso.imagen.url }}" alt="" class="img-media" height="60%" width="30%">
+                </td>
+                <td class="text-semibold">{{ curso.titulo }}</td>
+                <td class="muted">{{ curso.categoria }}</td>
+                <td class="muted">{{ curso.descripcion }}</td>
+                <td class="muted">{{ curso.profesor }}</td>
+                <td>
+                    <a href="{% url 'editar_curso' curso.id %}" class="btn btn-sm btn-success">Editar</a>
+                    <a href="{% url 'eliminar_curso' curso.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
