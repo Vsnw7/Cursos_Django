@@ -7,7 +7,6 @@ from contenido import views
 from cursos import views as views_cursos
 
 urlpatterns = [
-    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', views_cursos.principal, name="Principal"),
     path('contacto/', views_cursos.contacto, name="Contacto"),
